@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Backend/LibraryBook/.vs
+/src/Backend/LibraryBook/LibraryBook.Api/obj
+/src/Backend/LibraryBook/LibraryBook.Api/Properties
+/src/Backend/LibraryBook/LibraryBook.Dapper/obj
+/src/Backend/LibraryBook/LibraryBook.Business/obj
+/src/Backend/LibraryBook/LibraryBook.EF/obj
+/src/Backend/LibraryBook/LibraryBook.Tests/obj
