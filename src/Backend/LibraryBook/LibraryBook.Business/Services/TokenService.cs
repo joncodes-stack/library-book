@@ -1,7 +1,6 @@
-﻿using LibraryBook.Business.Configuration;
-using LibraryBook.Business.Dtos;
+﻿using LibraryBook.Business.Dtos;
 using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface;
+using LibraryBook.Business.Interface.Service;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;

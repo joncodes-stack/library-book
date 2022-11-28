@@ -1,4 +1,5 @@
 ﻿using LibraryBook.Business.Interface;
+using LibraryBook.Business.Interface.Service;
 using LibraryBook.Business.Notificacoes;
 using LibraryBook.Business.Services;
 using LibraryBook.EF.Context;

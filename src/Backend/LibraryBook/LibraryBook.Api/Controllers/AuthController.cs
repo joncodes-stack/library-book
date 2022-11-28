@@ -1,4 +1,6 @@
-﻿using LibraryBook.Business.Interface;
+﻿using LibraryBook.Business.Entities;
+using LibraryBook.Business.Interface;
+using LibraryBook.Business.Interface.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
