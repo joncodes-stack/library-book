@@ -9,3 +9,6 @@
 /src/Backend/LibraryBook/LibraryBook.Business/obj
 /src/Backend/LibraryBook/LibraryBook.EF/obj
 /src/Backend/LibraryBook/LibraryBook.Tests/obj
+/src/Backend/LibraryBook/LibraryBook.Tests/bin/Debug/net6.0
+/src/Backend/LibraryBook/LibraryBook.Dapper/bin/Debug/net6.0
+/src/Backend/LibraryBook/LibraryBook.EF/bin/Debug/net6.0
