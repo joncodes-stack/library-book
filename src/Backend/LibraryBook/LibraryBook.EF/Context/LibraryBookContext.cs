@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryBook.EF.Context
 {
-    public class LibraryContext
+    public class LibraryBookContext
     {
 
     }

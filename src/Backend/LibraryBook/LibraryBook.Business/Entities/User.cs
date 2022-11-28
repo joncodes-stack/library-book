@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryBook.Business.Entities
 {
-    public class Users : BaseEntity
+    public class User : BaseEntity
     {
         public string FullName { get; set; }
         public string Login { get; set; }

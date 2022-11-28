@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace LibraryBook.Api.Controllers
 {
     [ApiController]
-    public class MainController : ControllerBase
+    public class BaseController : ControllerBase
     {
         private readonly INotificador _notificador;
 
-        protected MainController(INotificador notificador)
+        protected BaseController(INotificador notificador)
         {
             _notificador = notificador;
         }

@@ -17,7 +17,7 @@ namespace LibraryBook.Business.Entities
         public int IdGender { get; set; }
         public Gender Gender { get; set; }
         public int IdUser { get; set; }
-        public Users User { get; set; }
+        public User User { get; set; }
 
     }
 }

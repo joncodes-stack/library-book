@@ -15,15 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{F16D390A-35DD-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapper", "Dapper", "{2A43967E-6CB5-4958-B922-8F3C296C9EC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryBook.Api", "LibraryBook.Api\LibraryBook.Api.csproj", "{F939759F-9888-4464-8E7C-E8905DD7B1EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryBook.Api", "LibraryBook.Api\LibraryBook.Api.csproj", "{F939759F-9888-4464-8E7C-E8905DD7B1EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryBook.Business", "LibraryBook.Business\LibraryBook.Business.csproj", "{88D405B3-3D65-4B68-9E3D-2F01BA7D2202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryBook.Business", "LibraryBook.Business\LibraryBook.Business.csproj", "{88D405B3-3D65-4B68-9E3D-2F01BA7D2202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryBook.Dapper", "LibraryBook.Dapper\LibraryBook.Dapper.csproj", "{472318FF-EDE3-4BAF-9396-9F32BB7274E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryBook.Dapper", "LibraryBook.Dapper\LibraryBook.Dapper.csproj", "{472318FF-EDE3-4BAF-9396-9F32BB7274E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryBook.EF", "LibraryBook.EF\LibraryBook.EF.csproj", "{58BE7B9E-FB49-4016-B450-B8F4EEB181D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryBook.EF", "LibraryBook.EF\LibraryBook.EF.csproj", "{58BE7B9E-FB49-4016-B450-B8F4EEB181D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryBook.Tests", "LibraryBook.Tests\LibraryBook.Tests.csproj", "{80B3652C-E4A6-4476-AF74-B8E9FD810CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryBook.Tests", "LibraryBook.Tests\LibraryBook.Tests.csproj", "{80B3652C-E4A6-4476-AF74-B8E9FD810CAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
