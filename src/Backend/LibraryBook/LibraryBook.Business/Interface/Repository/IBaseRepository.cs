@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryBook.Business.Interface.Repository
 {
-    public interface IRepository<TEntity> : IDisposable where TEntity : BaseEntity
+    public interface IBaseRepository<TEntity> : IDisposable where TEntity : BaseEntity
     {
         Task Add(TEntity entity);
         Task<TEntity> GetById(Guid id);

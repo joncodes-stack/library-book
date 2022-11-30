@@ -1,25 +1,42 @@
-﻿using LibraryBook.Business.Dtos;
+﻿using AutoMapper;
+using LibraryBook.Business.Dtos.Responses;
+using LibraryBook.Business.Entities;
 using LibraryBook.Business.Interface;
-using Microsoft.AspNetCore.Http;
+using LibraryBook.Business.Interface.Service;
 using Microsoft.AspNetCore.Mvc;
+using BC = BCrypt.Net.BCrypt;
+
 
 namespace LibraryBook.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/user")]
     [ApiController]
     public class UserController : BaseController
     {
-        public UserController(INotificador notificador) : base(notificador) { }
+        private readonly IUserService _userService;
+        private readonly IMapper _mapper;
+
+        public UserController(INotificador notificador,
+                              IMapper mapper,
+                              IUserService userService  ) : base(notificador) 
+        {
+            _userService = userService;
+            _mapper = mapper;
+        }
 
 
-        [HttpGet]
+        [HttpPost("register")]
         public async Task<ActionResult> RegisterUser(RegisterUserDto register)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
+            var user = _mapper.Map<User>(register);
 
+            user.Password = BC.HashPassword(register.Password);
 
-            return CustomResponse();
+            await _userService.Add(user);
+
+            return CustomResponse("Usuário Cadastrado com sucesso");
         }
     }
 }

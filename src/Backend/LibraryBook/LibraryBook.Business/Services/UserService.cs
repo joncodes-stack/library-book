@@ -2,6 +2,7 @@
 using LibraryBook.Business.Interface;
 using LibraryBook.Business.Interface.Repository;
 using LibraryBook.Business.Interface.Service;
+using LibraryBook.Business.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,18 @@ namespace LibraryBook.Business.Services
 {
     public class UserService : BaseService, IUserService
     {
-        public UserService(INotificador notificador) : base(notificador)
-        {
+        private readonly IUserRepository _userRepository;
 
+        public UserService(INotificador notificador, IUserRepository userRepository) : base(notificador)
+        {
+            _userRepository = userRepository;
         }
 
-        public Task Add(User user)
+        public async Task Add(User user)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new UserValidation(), user)) return;
+
+            await _userRepository.Add(user);
         }
 
         public Task Update(User user)
@@ -40,7 +45,7 @@ namespace LibraryBook.Business.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _userRepository.Dispose();
         }
 
         

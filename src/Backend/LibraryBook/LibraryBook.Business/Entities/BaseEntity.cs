@@ -11,6 +11,7 @@ namespace LibraryBook.Business.Entities
         protected BaseEntity()
         {
             Id = Guid.NewGuid();
+            Created_At= DateTime.Now;
         }
 
         public Guid Id { get; set; }

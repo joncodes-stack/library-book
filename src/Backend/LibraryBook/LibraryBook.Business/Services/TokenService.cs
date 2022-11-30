@@ -1,4 +1,4 @@
-﻿using LibraryBook.Business.Dtos;
+﻿using LibraryBook.Business.Dtos.Responses;
 using LibraryBook.Business.Entities;
 using LibraryBook.Business.Interface.Service;
 using Microsoft.Extensions.Configuration;

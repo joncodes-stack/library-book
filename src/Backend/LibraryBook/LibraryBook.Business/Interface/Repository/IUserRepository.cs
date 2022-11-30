@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryBook.Business.Interface.Repository
 {
-    internal interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IBaseRepository<User>
     {
 
     }
