@@ -1,4 +1,5 @@
-﻿using LibraryBook.Business.Entities;
+﻿using LibraryBook.Business.Dtos.Responses;
+using LibraryBook.Business.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace LibraryBook.Business.Interface.Service
         Task Add(User user);
         Task Update(User user);
         Task Delete(Guid id);
+        Task<LoginResponseDto> GenerateToken(User user);
+        Task<User> GetUserByEmail(string email);
     }
 }

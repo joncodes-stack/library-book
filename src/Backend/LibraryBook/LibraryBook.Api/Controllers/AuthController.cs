@@ -1,8 +1,10 @@
-﻿using LibraryBook.Business.Entities;
+﻿using LibraryBook.Business.Dtos.Responses;
+using LibraryBook.Business.Entities;
 using LibraryBook.Business.Interface;
 using LibraryBook.Business.Interface.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BC = BCrypt.Net.BCrypt;
 
 namespace LibraryBook.Api.Controllers
 {
@@ -10,18 +12,32 @@ namespace LibraryBook.Api.Controllers
     [ApiController]
     public class AuthController : BaseController
     {
-        private readonly ITokenService _tokenService;
-        public AuthController(INotificador notificador, ITokenService tokenService) : base(notificador)
+        private readonly IUserService _userService;
+        public AuthController(INotificador notificador, 
+                              IUserService userService) : base(notificador)
         {
-            _tokenService = tokenService;
+            _userService = userService;
         }
 
         [HttpPost("v1/login")]
-        public async Task<ActionResult> Login() 
+        public async Task<ActionResult> Login(LoginUserDto login) 
         {
-            var token = _tokenService.GenerateToken(null);
+            var user = await _userService.GetUserByEmail(login.Email);
 
-            return CustomResponse(token);
+            if(user == null || !BC.Verify(login.Password, user.Password))
+            {
+                CustomResponse("Email or password is incorrect");
+            } 
+
+            var loginResponse = await _userService.GenerateToken(user);
+
+            return CustomResponse(loginResponse);
+        }
+
+        [HttpPost("v1/forget-password")]
+        public async Task<ActionResult> ForgetPassword(string email)
+        {
+            return null;
         }
     }
 }

@@ -18,7 +18,6 @@ namespace LibraryBook.Api.Configuration
             services.AddScoped<LibraryBookContext>();
 
             //Services
-            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserService, UserService>();
 
             //Reposiotories
