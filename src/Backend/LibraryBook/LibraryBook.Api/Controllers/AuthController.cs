@@ -35,7 +35,7 @@ namespace LibraryBook.Api.Controllers
         }
 
         [HttpGet("v1/forget-password")]
-        public  string ForgetPassword()
+        public ActionResult ForgetPassword()
         {
             return Ok("teste");
         }
