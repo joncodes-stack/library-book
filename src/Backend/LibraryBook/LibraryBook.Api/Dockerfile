@@ -6,7 +6,7 @@ COPY . ./
 # Restore as distinct layers
 RUN dotnet restore
 # Build and publish a release
-RUN dotnet publish LibraryBook.Api.csproj -c -o out /p:DebugType=None /p:DebugSymbols=false
+RUN dotnet publish LibraryBook.Api -c Homolog -o out /p:DebugType=None /p:DebugSymbols=false
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/sdk:6.0
