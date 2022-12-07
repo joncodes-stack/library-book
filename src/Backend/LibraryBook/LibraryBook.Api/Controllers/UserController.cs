@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using LibraryBook.Business.Dtos.Responses;
+using LibraryBook.Business.Dtos;
 using LibraryBook.Business.Entities;
 using LibraryBook.Business.Interface;
 using LibraryBook.Business.Interface.Service;

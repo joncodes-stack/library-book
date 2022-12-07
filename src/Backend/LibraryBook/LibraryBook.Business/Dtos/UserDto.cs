@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Dtos.Responses
+namespace LibraryBook.Business.Dtos
 {
     public class RegisterUserDto
     {
