@@ -1,24 +1,16 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["LibraryBook.Api.csproj", "LibraryBook.Api/"]
-COPY ["LibraryBook.Business/LibraryBook.Business.csproj", "LibraryBook.Business/"]
-COPY ["LibraryBook.EF/LibraryBook.EF.csproj", "LibraryBook.EF/"]
-RUN dotnet restore "LibraryBook.Api/LibraryBook.Api.csproj"
+# Copy everything
 COPY . .
-WORKDIR "/src/LibraryBook.Api"
-RUN dotnet build "LibraryBook.Api.csproj" -c Release -o /app/build
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish  LibraryBook.Api.csproj
 
-FROM build AS publish
-RUN dotnet publish "LibraryBook.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build-env /app/out .
+EXPOSE 5001
 ENTRYPOINT ["dotnet", "LibraryBook.Api.dll"]
