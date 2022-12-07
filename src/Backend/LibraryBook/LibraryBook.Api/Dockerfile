@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["LibraryBook.Api/LibraryBook.Api.csproj", "LibraryBook.Api/"]
+COPY ["LibraryBook.Api.csproj", "LibraryBook.Api/"]
 COPY ["LibraryBook.Business/LibraryBook.Business.csproj", "LibraryBook.Business/"]
 COPY ["LibraryBook.EF/LibraryBook.EF.csproj", "LibraryBook.EF/"]
 RUN dotnet restore "LibraryBook.Api/LibraryBook.Api.csproj"
