@@ -34,10 +34,10 @@ namespace LibraryBook.Api.Controllers
             return CustomResponse(loginResponse);
         }
 
-        [HttpPost("v1/forget-password")]
-        public async Task<ActionResult> ForgetPassword(string email)
+        [HttpGet("v1/forget-password")]
+        public  string ForgetPassword()
         {
-            return null;
+            return Ok("teste");
         }
     }
 }
