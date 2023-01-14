@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibraryBook.Business\LibraryBook.Business.csproj" />
+    <ProjectReference Include="..\LibraryBook.CrossCutting\LibraryBook.CrossCutting.csproj" />
     <ProjectReference Include="..\LibraryBook.EF\LibraryBook.EF.csproj" />
   </ItemGroup>
 

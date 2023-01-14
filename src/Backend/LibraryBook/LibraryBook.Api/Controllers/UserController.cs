@@ -3,6 +3,7 @@ using LibraryBook.Business.Dtos;
 using LibraryBook.Business.Entities;
 using LibraryBook.Business.Interface;
 using LibraryBook.Business.Interface.Service;
+using LibraryBook.CrossCutting.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using BC = BCrypt.Net.BCrypt;
 
@@ -14,14 +15,17 @@ namespace LibraryBook.Api.Controllers
     public class UserController : BaseController
     {
         private readonly IUserService _userService;
+        private readonly IEmailService _emailService;
         private readonly IMapper _mapper;
 
         public UserController(INotificador notificador,
                               IMapper mapper,
-                              IUserService userService  ) : base(notificador) 
+                              IUserService userService,
+                              IEmailService emailService) : base(notificador) 
         {
             _userService = userService;
             _mapper = mapper;
+            _emailService = emailService;
         }
 
 
@@ -37,6 +41,14 @@ namespace LibraryBook.Api.Controllers
             await _userService.Add(user);
 
             return CustomResponse("Usuário Cadastrado com sucesso");
+        }
+
+        [HttpPost("forget-password")]
+        public async Task<ActionResult> ForgetPassword(string email)
+        {
+            await _emailService.SendEmailAsync(email);
+
+            return CustomResponse("Email Enviado com sucesso");
         }
     }
 }

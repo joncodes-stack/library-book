@@ -3,6 +3,8 @@ using LibraryBook.Business.Interface.Repository;
 using LibraryBook.Business.Interface.Service;
 using LibraryBook.Business.Notificacoes;
 using LibraryBook.Business.Services;
+using LibraryBook.CrossCutting.Interfaces;
+using LibraryBook.CrossCutting.Services;
 using LibraryBook.EF.Context;
 using LibraryBook.EF.Repositories;
 using Microsoft.Extensions.Options;
@@ -19,6 +21,7 @@ namespace LibraryBook.Api.Configuration
 
             //Services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IEmailService, EmailService>();
 
             //Reposiotories
             services.AddScoped<IUserRepository, UserRepository>();

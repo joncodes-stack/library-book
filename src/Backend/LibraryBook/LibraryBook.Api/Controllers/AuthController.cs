@@ -26,7 +26,7 @@ namespace LibraryBook.Api.Controllers
 
             if(user == null || !BC.Verify(login.Password, user.Password))
             {
-                CustomResponse("Email or password is incorrect");
+                return BadRequest(new {message = "Email or password is incorrect" });
             } 
 
             var loginResponse = await _userService.GenerateToken(user);
