@@ -20,9 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibraryBook.Business\LibraryBook.Business.csproj" />
+    <ProjectReference Include="..\LibraryBook.Business\LibraryBook.Application.csproj" />
     <ProjectReference Include="..\LibraryBook.CrossCutting\LibraryBook.CrossCutting.csproj" />
     <ProjectReference Include="..\LibraryBook.EF\LibraryBook.EF.csproj" />
+    <ProjectReference Include="..\LibraryBook.Ioc\LibraryBook.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

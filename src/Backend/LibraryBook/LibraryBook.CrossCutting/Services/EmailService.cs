@@ -25,7 +25,7 @@ namespace LibraryBook.CrossCutting.Services
             _configuration = configuration;
         }
 
-        public Task SendConfirmEmailAsync(string email, string content)
+        public Task SendConfirmEmailAsync(string email)
         {
             throw new NotImplementedException();
         }

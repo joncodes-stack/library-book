@@ -43,12 +43,52 @@ namespace LibraryBook.Api.Controllers
             return CustomResponse("Usuário Cadastrado com sucesso");
         }
 
+        [HttpPut("update-profile")]
+        public async Task<ActionResult> UpdateProfile(UpdateUserDto updateProfile)
+        {
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+
+
+            var user = await _userService.GetById(updateProfile.Id);
+
+            user.FullName = updateProfile.FullName;
+            user.Email = updateProfile.Email;
+            user.PhoneNumber = updateProfile.PhoneNumber;
+
+            await _userService.Update(user);
+
+            return CustomResponse("Perfil atualizado com sucesso");
+        }
+
+        [HttpPut("update-profile-pic")]
+        public async Task<ActionResult> UpdateProfilePic(UpdateUserProfilePicDto updateProfile)
+        {
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            var user = await _userService.GetById(updateProfile.Id);
+
+            user.ProfilePic = updateProfile.ProfilePic;
+
+            await _userService.Update(user);
+
+            return CustomResponse("Perfil atualizado com sucesso");
+        }
+
         [HttpPost("forget-password")]
         public async Task<ActionResult> ForgetPassword(string email)
         {
             await _emailService.SendEmailAsync(email);
 
-            return CustomResponse("Email Enviado com sucesso");
+            return CustomResponse("Email enviado com sucesso");
+        }
+
+        [HttpPost("confirm-password")]
+        public async Task<ActionResult> ConfirmPassword(string email)
+        {
+            await _emailService.SendConfirmEmailAsync(email);
+
+            return CustomResponse("Email de confirmação enviado com sucesso");
         }
     }
 }

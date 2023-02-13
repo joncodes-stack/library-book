@@ -1,0 +1,12 @@
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\bin\Debug\net6.0\LibraryBook.Domain.deps.json
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\bin\Debug\net6.0\LibraryBook.Domain.dll
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\bin\Debug\net6.0\LibraryBook.Domain.pdb
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.csproj.AssemblyReference.cache
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.AssemblyInfoInputs.cache
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.AssemblyInfo.cs
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.csproj.CoreCompileInputs.cache
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.dll
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\refint\LibraryBook.Domain.dll
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\LibraryBook.Domain.pdb
+D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\obj\Debug\net6.0\ref\LibraryBook.Domain.dll

@@ -27,6 +27,31 @@ namespace LibraryBook.Business.Dtos
         public string ConfirmPassword { get; set; }
     }
 
+    public class UpdateUserDto
+    {
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public Guid Id { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string FullName { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
+        public string Email { get; set; }
+
+        public string PhoneNumber { get; set; }
+    }
+
+    public class UpdateUserProfilePicDto
+    {
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public Guid Id { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string ProfilePic { get; set; }
+    }
+
     public class LoginUserDto
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]

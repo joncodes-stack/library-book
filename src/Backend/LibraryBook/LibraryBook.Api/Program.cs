@@ -1,5 +1,6 @@
 using LibraryBook.Api.Configuration;
 using LibraryBook.EF.Context;
+using LibraryBook.Ioc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

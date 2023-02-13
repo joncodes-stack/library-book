@@ -36,9 +36,9 @@ namespace LibraryBook.Business.Services
             await _userRepository.Add(user);
         }
 
-        public Task Update(User user)
+        public async Task Update(User user)
         {
-            throw new NotImplementedException();
+            await _userRepository.Update(user);
         }
 
         public Task Delete(Guid id)
@@ -48,7 +48,7 @@ namespace LibraryBook.Business.Services
 
         public async Task<User> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetById(id);
         }
 
         public void Dispose()

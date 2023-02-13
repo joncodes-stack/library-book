@@ -7,12 +7,16 @@ using LibraryBook.CrossCutting.Interfaces;
 using LibraryBook.CrossCutting.Services;
 using LibraryBook.EF.Context;
 using LibraryBook.EF.Repositories;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.SwaggerGen;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace LibraryBook.Api.Configuration
+namespace LibraryBook.Ioc
 {
-    public static class DependencyInjectionConfig
+    public static class DependencyInjection
     {
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {

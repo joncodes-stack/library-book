@@ -9,6 +9,6 @@ namespace LibraryBook.CrossCutting.Interfaces
     public interface IEmailService
     {
         Task SendEmailAsync(string email);
-        Task SendConfirmEmailAsync(string email, string content);
+        Task SendConfirmEmailAsync(string email);
     }
 }

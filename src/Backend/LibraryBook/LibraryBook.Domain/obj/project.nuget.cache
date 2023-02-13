@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bbQIa/9kLrHbwI/rC7Hkl7DPtjJksNYkB0NlGIMn3aaLjCeyetxS/0rOzSVmtDzQqdtWkpBJxjWxz5GCkh3fpA==",
+  "success": true,
+  "projectFilePath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jonat\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
