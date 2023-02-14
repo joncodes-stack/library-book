@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YQKlUER27Mhx7bGETDeWpj5651ykFVHCNWt6IZOu6xQbGslVLWeUX2hIvo1q8qubDadBvgJyqNaDLubvSs9M2A==",
+  "dgSpecHash": "+rHlFyrSeGjvrjMaUYjNQcRmn9dzJC6S+7uIi86pzGYc5bGYQRteIn+QqrekpsZ6LXDztPXQd7hY7dtIJ7XG7g==",
   "success": true,
   "projectFilePath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj",
   "expectedPackageFiles": [
@@ -50,8 +50,11 @@
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

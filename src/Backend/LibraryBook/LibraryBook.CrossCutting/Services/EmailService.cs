@@ -89,34 +89,34 @@ namespace LibraryBook.CrossCutting.Services
             await smtp.SendMailAsync(mailMessage);
         }
 
-        public async Task SendEmailAsync(string email)
-        {
-            var emailRequest = new EmailDto();
+        //public async Task SendEmailAsync(string email)
+        //{
+        //    var emailRequest = new EmailDto();
 
-            var content = BuildforgetEmail();
+        //    var content = BuildForgetEmail(name);
 
-            emailRequest.Subject = _configuration.GetSection("EmailConfiguration:Subject").Value;
-            emailRequest.ToEmail = email;
-            emailRequest.Body = content;
+        //    emailRequest.Subject = _configuration.GetSection("EmailConfiguration:Subject").Value;
+        //    emailRequest.ToEmail = email;
+        //    emailRequest.Body = content;
 
-            var mailMessage = new MailMessage();
-            var smtp = new SmtpClient();
+        //    var mailMessage = new MailMessage();
+        //    var smtp = new SmtpClient();
 
-            mailMessage.From = new MailAddress(_configuration.GetSection("EmailConfiguration:FromEmail").Value, "");
-            mailMessage.To.Add(new MailAddress(emailRequest.ToEmail));
-            mailMessage.Subject = emailRequest.Subject;
+        //    mailMessage.From = new MailAddress(_configuration.GetSection("EmailConfiguration:FromEmail").Value, "");
+        //    mailMessage.To.Add(new MailAddress(emailRequest.ToEmail));
+        //    mailMessage.Subject = emailRequest.Subject;
 
 
-            mailMessage.IsBodyHtml = true;
-            mailMessage.Body = emailRequest.Body;
-            smtp.Port = int.Parse(_configuration.GetSection("EmailConfiguration:Port").Value);
-            smtp.Host = _configuration.GetSection("EmailConfiguration:Host").Value;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential(_configuration.GetSection("EmailConfiguration:Mail").Value, _configuration.GetSection("EmailConfiguration:Password").Value);
-            smtp.EnableSsl = true;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            await smtp.SendMailAsync(mailMessage);
-        }
+        //    mailMessage.IsBodyHtml = true;
+        //    mailMessage.Body = emailRequest.Body;
+        //    smtp.Port = int.Parse(_configuration.GetSection("EmailConfiguration:Port").Value);
+        //    smtp.Host = _configuration.GetSection("EmailConfiguration:Host").Value;
+        //    smtp.UseDefaultCredentials = false;
+        //    smtp.Credentials = new NetworkCredential(_configuration.GetSection("EmailConfiguration:Mail").Value, _configuration.GetSection("EmailConfiguration:Password").Value);
+        //    smtp.EnableSsl = true;
+        //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //    await smtp.SendMailAsync(mailMessage);
+        //}
 
         private string BuildConfirmationEmail(string name, int code)
         {
