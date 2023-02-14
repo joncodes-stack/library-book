@@ -17,5 +17,6 @@ namespace LibraryBook.Business.Interface.Service
         Task Delete(Guid id);
         Task<LoginResponseDto> GenerateToken(User user);
         Task<User> GetUserByEmail(string email);
+        Task<User> GetUserByCode(int code);
     }
 }

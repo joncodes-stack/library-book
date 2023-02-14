@@ -4,6 +4,7 @@ using LibraryBook.EF.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryBook.EF.Migrations
 {
     [DbContext(typeof(LibraryBookContext))]
-    partial class LibraryBookContextModelSnapshot : ModelSnapshot
+    [Migration("20230214024012_add-column-code")]
+    partial class addcolumncode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +123,7 @@ namespace LibraryBook.EF.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("active");
 
-                    b.Property<int?>("Code")
+                    b.Property<int>("Code")
                         .HasColumnType("int")
                         .HasColumnName("code");
 

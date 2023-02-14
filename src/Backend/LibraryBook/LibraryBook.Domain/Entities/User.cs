@@ -14,5 +14,6 @@ namespace LibraryBook.Business.Entities
         public string Password { get; set; }
         public string ProfilePic { get; set; }
         public bool Active { get; set; }
+        public int? Code { get; set; }
     }
 }

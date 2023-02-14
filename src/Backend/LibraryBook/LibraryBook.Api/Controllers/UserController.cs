@@ -34,13 +34,38 @@ namespace LibraryBook.Api.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
+            var getUser = await _userService.GetUserByEmail(register.Email);
+
+            if (getUser != null)
+            {
+                return CustomResponse("Email já cadastrado");
+            }
+            
             var user = _mapper.Map<User>(register);
 
+            var random = new Random();
+            var code = random.Next(100000, 999999);
+
             user.Password = BC.HashPassword(register.Password);
+            user.Code = code;
 
             await _userService.Add(user);
 
-            return CustomResponse("Usuário Cadastrado com sucesso");
+            await _emailService.SendValidatemEmailAsync(register.Email,register.FullName, code);
+
+            return CustomResponse("Usuário Cadastrado com sucesso, favor verifique sua caixa de email para confirmação !!");
+        }
+
+        [HttpPost("active-account")]
+        public async Task<ActionResult> ActiveAccount(int code)
+        {
+            var user = await _userService.GetUserByCode(code);
+
+            user.Active = true;
+
+            await _userService.Update(user);
+
+            return CustomResponse("Email Validado com sucesso !!");
         }
 
         [HttpPut("update-profile")]
@@ -78,7 +103,18 @@ namespace LibraryBook.Api.Controllers
         [HttpPost("forget-password")]
         public async Task<ActionResult> ForgetPassword(string email)
         {
-            await _emailService.SendEmailAsync(email);
+            var user = await _userService.GetUserByEmail(email);
+
+            if (user == null)
+                return NotFound("Usuário não encontrado");
+
+            var random = new Random();
+            var code = random.Next(100000, 999999);
+            user.Code = code;
+
+            await _userService.Update(user);
+
+            await _emailService.SendEmailForgetAsync(email, user.FullName, code);
 
             return CustomResponse("Email enviado com sucesso");
         }

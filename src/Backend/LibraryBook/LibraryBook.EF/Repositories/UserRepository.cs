@@ -19,5 +19,11 @@ namespace LibraryBook.EF.Repositories
             return await _libraryBook.User.AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Email == email);
         }
+
+        public async Task<User> GetUserByCode(int code)
+        {
+            return await _libraryBook.User.AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Code == code);
+        }
     }
 }

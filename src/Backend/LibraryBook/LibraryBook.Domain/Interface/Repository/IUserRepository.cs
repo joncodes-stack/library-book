@@ -10,5 +10,6 @@ namespace LibraryBook.Business.Interface.Repository
     public interface IUserRepository : IBaseRepository<User>
     {
         Task<User> GetUserByEmail(string email);
+        Task<User> GetUserByCode(int code);
     }
 }

@@ -101,5 +101,10 @@ namespace LibraryBook.Business.Services
         {
             return await _userRepository.GetUserByEmail(email);
         }
+
+        public async Task<User> GetUserByCode(int code)
+        {
+            return await _userRepository.GetUserByCode(code);
+        }
     }
 }
