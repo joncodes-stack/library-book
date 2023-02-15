@@ -60,11 +60,11 @@ namespace LibraryBook.CrossCutting.Services
             await smtp.SendMailAsync(mailMessage);
         }
 
-        public async Task SendEmailForgetAsync(string email, string name, int code)
+        public async Task SendEmailForgetAsync(string email, int code)
         {
             var emailRequest = new EmailDto();
 
-            var content = BuildForgetEmail(name, code);
+            var content = BuildForgetEmail(code);
 
             emailRequest.Subject = _configuration.GetSection("EmailConfiguration:Subject").Value;
             emailRequest.ToEmail = email;
@@ -489,7 +489,7 @@ namespace LibraryBook.CrossCutting.Services
             return templateEmail;
         }
 
-        private string BuildForgetEmail(string name, int code)
+        private string BuildForgetEmail(int code)
         {
             var templateEmail = $@"<!DOCTYPE html>
                     <html lang=""en"" xmlns=""http://www.w3.org/1999/xhtml"" xmlns:v=""urn:schemas-microsoft-com:vml"" xmlns:o=""urn:schemas-microsoft-com:office:office"">
@@ -843,7 +843,7 @@ namespace LibraryBook.CrossCutting.Services
             		                    <td>
             			                    <div class=""text"" style=""padding: 0 2.5em; text-align: center;"">
             				                    <h2>Verificação de email</h2>
-            				                    <h3>Oi, {name} <br><br> Este e seu codigo de verificação: <br> {code} <br><br> Agora basta inseri-lo no site ou no app para continuar com a validação do seu email.</h3>
+            				                    <h3>Olá, Este e seu codigo de verificação: <br> {code} <br><br> Agora basta inseri-lo no site ou no app para continuar com a validação do seu email.</h3>
             			                    </div>
             		                    </td>
             	                    </tr>

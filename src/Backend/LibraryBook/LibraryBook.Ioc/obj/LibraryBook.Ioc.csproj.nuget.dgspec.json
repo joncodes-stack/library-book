@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj": {}
+    "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj": {}
   },
   "projects": {
-    "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj": {
+    "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj",
+        "projectUniqueName": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj",
         "projectName": "LibraryBook.Application",
-        "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\obj\\",
+        "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj",
+        "packagesPath": "C:\\Users\\jonatas.paz\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonatas.paz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -34,8 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj": {
-                "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj"
+              "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj": {
+                "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj"
               }
             }
           }
@@ -79,25 +79,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj": {
+    "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj",
+        "projectUniqueName": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj",
         "projectName": "LibraryBook.CrossCutting",
-        "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\obj\\",
+        "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\jonatas.paz\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonatas.paz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -113,8 +113,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj": {
-                "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj"
+              "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj": {
+                "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj"
               }
             }
           }
@@ -154,25 +154,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj": {
+    "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj",
+        "projectUniqueName": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj",
         "projectName": "LibraryBook.Domain",
-        "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\obj\\",
+        "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj",
+        "packagesPath": "C:\\Users\\jonatas.paz\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonatas.paz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -221,25 +221,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj": {
+    "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj",
+        "projectUniqueName": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj",
         "projectName": "LibraryBook.EF",
-        "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\obj\\",
+        "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj",
+        "packagesPath": "C:\\Users\\jonatas.paz\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonatas.paz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -255,8 +255,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj": {
-                "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj"
+              "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj": {
+                "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Business\\LibraryBook.Application.csproj"
               }
             }
           }
@@ -316,25 +316,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj": {
+    "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj",
+        "projectUniqueName": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj",
         "projectName": "LibraryBook.Ioc",
-        "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\obj\\",
+        "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\LibraryBook.Ioc.csproj",
+        "packagesPath": "C:\\Users\\jonatas.paz\\.nuget\\packages\\",
+        "outputPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Ioc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jonatas.paz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -350,14 +350,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj": {
-                "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj"
+              "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj": {
+                "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.CrossCutting\\LibraryBook.CrossCutting.csproj"
               },
-              "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj": {
-                "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj"
+              "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj": {
+                "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.Domain\\LibraryBook.Domain.csproj"
               },
-              "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj": {
-                "projectPath": "D:\\Source\\GitHub\\Projetos Pessoais\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj"
+              "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj": {
+                "projectPath": "C:\\source\\GitHub\\library-book\\src\\Backend\\LibraryBook\\LibraryBook.EF\\LibraryBook.EF.csproj"
               }
             }
           }
@@ -401,7 +401,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

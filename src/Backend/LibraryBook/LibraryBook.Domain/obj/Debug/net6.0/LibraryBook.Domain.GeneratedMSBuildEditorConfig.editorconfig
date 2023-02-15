@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LibraryBook.Domain
-build_property.ProjectDir = D:\Source\GitHub\Projetos Pessoais\library-book\src\Backend\LibraryBook\LibraryBook.Domain\
+build_property.ProjectDir = C:\source\GitHub\library-book\src\Backend\LibraryBook\LibraryBook.Domain\
