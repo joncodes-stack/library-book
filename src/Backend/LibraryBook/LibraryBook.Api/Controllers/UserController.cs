@@ -107,25 +107,6 @@ namespace LibraryBook.Api.Controllers
             return CustomResponse("Perfil atualizado com sucesso");
         }
 
-        [HttpPost("forget-password")]
-        public async Task<ActionResult> ForgetPassword(string email)
-        {
-            var user = await _userService.GetUserByEmail(email);
-
-            if (user == null)
-                return NotFound("Usuário não encontrado");
-
-            var random = new Random();
-            var code = random.Next(100000, 999999);
-            user.Code = code;
-
-            await _userService.Update(user);
-
-            await _emailService.SendEmailForgetAsync(email, user.FullName, code);
-
-            return CustomResponse("Email enviado com sucesso");
-        }
-
         [HttpPost("confirm-password")]
         public async Task<ActionResult> ConfirmPassword(string email)
         {

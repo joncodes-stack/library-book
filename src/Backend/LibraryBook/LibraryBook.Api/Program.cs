@@ -2,6 +2,7 @@ using LibraryBook.Api.Configuration;
 using LibraryBook.EF.Context;
 using LibraryBook.Ioc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 
@@ -11,7 +12,8 @@ builder.Configuration
     .SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile("appsettings.json", true, true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
-    .AddEnvironmentVariables();
+.AddEnvironmentVariables();
+
 
 // Add services to the container.
 
@@ -39,12 +41,8 @@ builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+ app.UseSwagger();
+ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
