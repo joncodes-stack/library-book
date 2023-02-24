@@ -2,17 +2,4 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/src/Backend/LibraryBook/.vs
-/src/Backend/LibraryBook/LibraryBook.Api/obj
-/src/Backend/LibraryBook/LibraryBook.Api/Properties
-/src/Backend/LibraryBook/LibraryBook.Dapper/obj
-/src/Backend/LibraryBook/LibraryBook.Business/obj
-/src/Backend/LibraryBook/LibraryBook.EF/obj
-/src/Backend/LibraryBook/LibraryBook.Tests/obj
-/src/Backend/LibraryBook/LibraryBook.Tests/bin/Debug/net6.0
-/src/Backend/LibraryBook/LibraryBook.Dapper/bin/Debug/net6.0
-/src/Backend/LibraryBook/LibraryBook.EF/bin/Debug/net6.0
-/src/Backend/LibraryBook/LibraryBook.Business/bin/Debug/net6.0
-/src/Backend/LibraryBook/LibraryBook.Api/bin/Debug/net6.0
-/src/Backend/LibraryBook/LibraryBook.CrossCutting/bin/Debug/net6.0
-/src/Backend/LibraryBook/LibraryBook.CrossCutting/obj
+/src/Backend/LibraryBook/LibraryBook.Domain/obj/Debug/net6.0/LibraryBook.Domain.assets.cache
