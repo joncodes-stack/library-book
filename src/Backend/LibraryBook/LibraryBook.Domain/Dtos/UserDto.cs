@@ -39,6 +39,7 @@ namespace LibraryBook.Business.Dtos
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
         public string Email { get; set; }
+        public string Password { get; set; }
 
         public string PhoneNumber { get; set; }
     }

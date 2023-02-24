@@ -86,6 +86,7 @@ namespace LibraryBook.Api.Controllers
             user.FullName = updateProfile.FullName;
             user.Email = updateProfile.Email;
             user.PhoneNumber = updateProfile.PhoneNumber;
+            user.Password = updateProfile.Password;
 
             await _userService.Update(user);
 
