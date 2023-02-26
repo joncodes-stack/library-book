@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using LibraryBook.Domain.Entities;
 using LibraryBook.CrossCutting.Services;
-using LibraryBook.Domain.Dtos;
 using LibraryBook.Domain.Services;
 using Microsoft.Win32;
+using LibraryBook.Domain.Dtos.BooksDto;
 
 namespace LibraryBook.Api.Controllers
 {
@@ -28,7 +28,13 @@ namespace LibraryBook.Api.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("register")]
+        [HttpGet("get-book-by-user")]
+        public async Task<IEnumerable<BookDto>> GetBooksByUser(Guid idUser)
+        {
+            return _mapper.Map<IEnumerable<BookDto>>(await _bookService.GetByUser(idUser));
+        }
+
+        [HttpPost("add-book")]
         public async Task<ActionResult> AddBook(BookDto bookDto)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -37,11 +43,11 @@ namespace LibraryBook.Api.Controllers
 
             await _bookService.Add(book);
 
-            return CustomResponse("Livro cadastrado com sucesso");
+            return CustomResponse("Dados do livro cadastrado com sucesso");
         }
 
-        [HttpPost("register")]
-        public async Task<ActionResult> UpdateBook(BookDto bookDto)
+        [HttpPut("update-book")]
+        public async Task<ActionResult> UpdateBook(UpdateBookDto bookDto)
         {
             if (bookDto.Id == null)
             {
@@ -50,11 +56,33 @@ namespace LibraryBook.Api.Controllers
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var book = _mapper.Map<Book>(bookDto);
+            var book = await _bookService.GetById(bookDto.Id);
+            
+            book.Title = bookDto.Title;
+            book.Author = bookDto.Author;
+            book.Synopsis = bookDto.Synopsis;
+            book.IsbnNumber = bookDto.IsbnNumber;
+            book.IdGender = bookDto.IdGender;
+            book.Editor = bookDto.Editor;
 
-            await _bookService.Add(book);
+            await _bookService.Update(book);
 
-            return CustomResponse("Livro cadastrado com sucesso");
+            return CustomResponse("Dados do livro Atualizado com sucesso!");
+        }
+
+        [HttpDelete("remove-book")]
+        public async Task<ActionResult> RemoveBook(Guid id)
+        {
+            if (id == null)
+            {
+                return BadRequest("Id do livro e obrigatório");
+            }
+
+            var book = await _bookService.GetById(id);
+
+            await _bookService.Delete(book.Id);
+
+            return CustomResponse("Dados do livro Atualizado com sucesso!");
         }
 
     }

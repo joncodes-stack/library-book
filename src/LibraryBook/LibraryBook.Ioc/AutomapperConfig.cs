@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using LibraryBook.Domain.Dtos;
+using LibraryBook.Domain.Dtos.BooksDto;
 using LibraryBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace LibraryBook.Ioc
         public AutomapperConfiguration()
         {
             CreateMap<User, RegisterUserDto>().ReverseMap();
+            CreateMap<Book, BookDto>().ReverseMap();
+            CreateMap<Book, UpdateBookDto>().ReverseMap();
         }
     }
 }

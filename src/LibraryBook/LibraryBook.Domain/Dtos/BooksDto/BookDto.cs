@@ -6,22 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Domain.Dtos
+namespace LibraryBook.Domain.Dtos.BooksDto
 {
     public class BookDto
     {
-        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Title { get; set; }
 
-        public int IsbnNumber { get; set; }
-        
+        public long? IsbnNumber { get; set; }
+
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Author { get; set; }
-        
+
         public string Editor { get; set; }
-        
+
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Synopsis { get; set; }
 

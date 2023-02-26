@@ -18,11 +18,11 @@ namespace LibraryBook.EF.Maps
             base.Configure(builder);
 
             builder.Property(x => x.Title).HasColumnName("title").HasMaxLength(100).IsRequired();
-            builder.Property(x => x.IsbnNumber).HasColumnName("isbnNumber").HasMaxLength(20).IsRequired();
+            builder.Property(x => x.IsbnNumber).HasColumnName("isbnNumber").HasMaxLength(20);
             builder.Property(x => x.Author).HasColumnName("auhor").HasMaxLength(100).IsRequired();
             builder.Property(x => x.Editor).HasColumnName("editor").HasMaxLength(100).IsRequired();
             builder.Property(x => x.Synopsis).HasColumnName("synopsis").HasMaxLength(100).IsRequired();
-            builder.Property(x => x.PictureBook).HasColumnName("pictureBook").HasMaxLength(100).IsRequired();
+            builder.Property(x => x.PictureBook).HasColumnName("pictureBook").IsRequired(false);
 
             builder.Property(x => x.IdGender).HasColumnName("id_gender").IsRequired();
             builder.HasOne(x => x.Gender).WithMany().HasForeignKey(x => x.IdGender);

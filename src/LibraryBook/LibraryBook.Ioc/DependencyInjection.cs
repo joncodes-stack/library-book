@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LibraryBook.Domain.Services;
 using LibraryBook.Domain.Services;
+using LibraryBook.Application.Services;
 
 namespace LibraryBook.Ioc
 {
@@ -27,9 +28,11 @@ namespace LibraryBook.Ioc
             //Services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IBookService, BookService>();
 
             //Reposiotories
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
 
 
             services.AddScoped<INotificador, Notificador>();
