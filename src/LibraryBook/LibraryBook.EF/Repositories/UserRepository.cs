@@ -1,5 +1,5 @@
-﻿using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface.Repository;
+﻿using LibraryBook.Domain.Entities;
+using LibraryBook.Domain.Interface.Repository;
 using LibraryBook.EF.Context;
 using Microsoft.EntityFrameworkCore;
 using System;

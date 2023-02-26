@@ -1,8 +1,7 @@
-﻿using LibraryBook.Business.Interface;
-using LibraryBook.Business.Interface.Repository;
-using LibraryBook.Business.Interface.Service;
-using LibraryBook.Business.Notificacoes;
-using LibraryBook.Business.Services;
+﻿using LibraryBook.Domain.Interface;
+using LibraryBook.Domain.Interface.Repository;
+using LibraryBook.Domain.Interface.Service;
+using LibraryBook.Domain.Notificacoes;
 using LibraryBook.CrossCutting.Interfaces;
 using LibraryBook.CrossCutting.Services;
 using LibraryBook.EF.Context;
@@ -13,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryBook.Domain.Services;
+using LibraryBook.Domain.Services;
 
 namespace LibraryBook.Ioc
 {
