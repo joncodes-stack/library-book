@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Entities
+namespace LibraryBook.Domain.Entities
 {
     public class Gender : BaseEntity
     {

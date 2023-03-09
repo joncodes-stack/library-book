@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
-using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface;
-using LibraryBook.Business.Notificacoes;
+using LibraryBook.Domain.Entities;
+using LibraryBook.Domain.Interface;
+using LibraryBook.Domain.Notificacoes;
 
 
-namespace LibraryBook.Business.Services
+namespace LibraryBook.Domain.Services
 {
     public class BaseService
     {
