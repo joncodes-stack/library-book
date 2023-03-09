@@ -1,11 +1,11 @@
-﻿using LibraryBook.Business.Notificacoes;
+﻿using LibraryBook.Domain.Notificacoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Interface
+namespace LibraryBook.Domain.Interface
 {
     public interface INotificador
     {

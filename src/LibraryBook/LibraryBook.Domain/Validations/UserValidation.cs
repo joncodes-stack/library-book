@@ -1,13 +1,12 @@
-﻿
-using FluentValidation;
-using LibraryBook.Business.Entities;
+﻿using FluentValidation;
+using LibraryBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Validations
+namespace LibraryBook.Domain.Validations
 {
     public class UserValidation : AbstractValidator<User>
     {

@@ -1,4 +1,4 @@
-﻿using LibraryBook.Business.Entities;
+﻿using LibraryBook.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

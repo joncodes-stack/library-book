@@ -1,7 +1,7 @@
-﻿using LibraryBook.Business.Dtos;
-using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface;
-using LibraryBook.Business.Interface.Service;
+﻿using LibraryBook.Domain.Dtos;
+using LibraryBook.Domain.Entities;
+using LibraryBook.Domain.Interface;
+using LibraryBook.Domain.Interface.Service;
 using LibraryBook.CrossCutting.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
