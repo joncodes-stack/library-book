@@ -35,7 +35,7 @@ namespace LibraryBook.Api.Controllers
         }
 
         [HttpPost("add-book")]
-        public async Task<ActionResult> AddBook(BookDto bookDto)
+        public async Task<ActionResult> AddBook([FromBody]BookDto bookDto)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
@@ -84,6 +84,5 @@ namespace LibraryBook.Api.Controllers
 
             return CustomResponse("Dados do livro Atualizado com sucesso!");
         }
-
     }
 }
