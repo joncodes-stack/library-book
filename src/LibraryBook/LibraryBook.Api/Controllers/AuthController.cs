@@ -38,14 +38,14 @@ namespace LibraryBook.Api.Controllers
         {
             var user = await _userService.GetUserByEmail(login.Email);
 
+            if (user == null || !BC.Verify(login.Password, user.Password))
+            {
+                return BadRequest(new { message = "Email or password is incorrect" });
+            }
+
             if (user.Active == false)
             {
                 return CustomResponse($@"O Email {login.Email} não foi validado");
-            }
-
-            if (user == null || !BC.Verify(login.Password, user.Password))
-            {
-                return BadRequest(new {message = "Email or password is incorrect" });
             }
 
             var refreshToken = _userService.GenerateRefreshToken();
@@ -60,6 +60,7 @@ namespace LibraryBook.Api.Controllers
 
 
             var loginResponse = await _userService.GenerateToken(user);
+            loginResponse.RefreshToken = refreshToken;
 
             return CustomResponse(loginResponse);
         }
@@ -134,8 +135,7 @@ namespace LibraryBook.Api.Controllers
                 return BadRequest("Invalid access token/refresh token");
             }
 
-            string username = principal.Identity.Name;
-            var user = await _userService.GetUserByEmail(username);
+            var user = await _userService.GetById(tokenModel.Id);
 
             if (user == null || user.RefreshToken != refreshToken ||
                        user.RefreshTokenExpireTime <= DateTime.Now)
@@ -164,7 +164,7 @@ namespace LibraryBook.Api.Controllers
                 ValidateIssuer = false,
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
-                                   .GetBytes(_configuration["JWT:SecretKey"])),
+                                   .GetBytes(_configuration["JWT:Secret"])),
                 ValidateLifetime = false
             };
 

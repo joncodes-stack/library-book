@@ -70,6 +70,12 @@ namespace LibraryBook.Domain.Services
                 var key = Encoding.ASCII.GetBytes(secretKey.Value);
                 var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
                 {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim("Name", user.FullName),
+
+                    }),
+
                     Issuer = Issuer.Value,
                     Audience = validOn.Value,
                     Expires = DateTime.UtcNow.AddHours(8),
@@ -79,13 +85,11 @@ namespace LibraryBook.Domain.Services
 
                 var encodedToken = tokenHandler.WriteToken(token);
 
-                var refreshToken = GenerateRefreshToken();
-
                 var response = new LoginResponseDto
                 {
                     AccessToken = encodedToken,
-                    RefreshToken = refreshToken,
                     ExpiresIn = TimeSpan.FromHours(8).TotalSeconds,
+
                     UserToken = new UserTokenDto
                     {
                         Id = user.Id.ToString(),
