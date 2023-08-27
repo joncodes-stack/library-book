@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Dtos
+namespace LibraryBook.Domain.Dtos
 {
     public class EmailDto
     {

@@ -1,9 +1,9 @@
-﻿using LibraryBook.Business.Dtos;
-using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface;
-using LibraryBook.Business.Interface.Repository;
-using LibraryBook.Business.Interface.Service;
-using LibraryBook.Business.Validations;
+﻿using LibraryBook.Domain.Dtos;
+using LibraryBook.Domain.Entities;
+using LibraryBook.Domain.Interface;
+using LibraryBook.Domain.Interface.Repository;
+using LibraryBook.Domain.Interface.Service;
+using LibraryBook.Domain.Validations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -16,7 +16,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Services
+namespace LibraryBook.Domain.Services
 {
     public class UserService : BaseService, IUserService
     {

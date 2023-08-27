@@ -1,6 +1,6 @@
-﻿using LibraryBook.Business.Dtos;
-using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface.Repository;
+﻿using LibraryBook.Domain.Dtos;
+using LibraryBook.Domain.Entities;
+using LibraryBook.Domain.Interface.Repository;
 using LibraryBook.CrossCutting.Interfaces;
 using LibraryBook.CrossCutting.Models;
 using Microsoft.Extensions.Configuration;

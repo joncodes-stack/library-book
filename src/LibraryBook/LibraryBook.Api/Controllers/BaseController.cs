@@ -1,5 +1,5 @@
-﻿using LibraryBook.Business.Interface;
-using LibraryBook.Business.Notificacoes;
+﻿using LibraryBook.Domain.Interface;
+using LibraryBook.Domain.Notificacoes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Business.Notificacoes
+namespace LibraryBook.Domain.Notificacoes
 {
     public class Notificacao
     {

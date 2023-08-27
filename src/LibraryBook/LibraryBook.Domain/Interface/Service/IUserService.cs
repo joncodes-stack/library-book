@@ -1,13 +1,7 @@
-﻿using LibraryBook.Business.Dtos;
-using LibraryBook.Business.Dtos;
-using LibraryBook.Business.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LibraryBook.Domain.Dtos;
+using LibraryBook.Domain.Entities;
 
-namespace LibraryBook.Business.Interface.Service
+namespace LibraryBook.Domain.Interface.Service
 {
     public interface IUserService : IDisposable
     {

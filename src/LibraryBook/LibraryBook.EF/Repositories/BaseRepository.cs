@@ -1,5 +1,5 @@
-﻿using LibraryBook.Business.Entities;
-using LibraryBook.Business.Interface.Repository;
+﻿using LibraryBook.Domain.Entities;
+using LibraryBook.Domain.Interface.Repository;
 using LibraryBook.EF.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,11 +20,6 @@ namespace LibraryBook.EF.Repositories
         {
             _libraryBook = libraryBook;
             DbSet = libraryBook.Set<TEntity>();
-        }
-
-        public async Task<IEnumerable<TEntity>> Search(Expression<Func<TEntity, bool>> predicate)
-        {
-            return await DbSet.AsNoTracking().Where(predicate).ToListAsync();
         }
 
         public virtual async Task<TEntity> GetById(Guid id)

@@ -1,5 +1,4 @@
-﻿using LibraryBook.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace LibraryBook.Domain.Dtos.BooksDto
 {
-    public class BookDto
+    public class UpdateBookDto
     {
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Title { get; set; }
@@ -19,7 +19,6 @@ namespace LibraryBook.Domain.Dtos.BooksDto
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Author { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Editor { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
