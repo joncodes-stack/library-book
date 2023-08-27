@@ -18,5 +18,6 @@ namespace LibraryBook.Business.Interface.Service
         Task<LoginResponseDto> GenerateToken(User user);
         Task<User> GetUserByEmail(string email);
         Task<User> GetUserByCode(int code);
+        string GenerateRefreshToken();
     }
 }

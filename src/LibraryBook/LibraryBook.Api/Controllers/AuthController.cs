@@ -3,8 +3,14 @@ using LibraryBook.Business.Entities;
 using LibraryBook.Business.Interface;
 using LibraryBook.Business.Interface.Service;
 using LibraryBook.CrossCutting.Interfaces;
+using LibraryBook.Domain.Dtos;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using BC = BCrypt.Net.BCrypt;
 
 namespace LibraryBook.Api.Controllers
@@ -15,13 +21,16 @@ namespace LibraryBook.Api.Controllers
     {
         private readonly IUserService _userService;
         private readonly IEmailService _emailService;
+        private readonly IConfiguration _configuration;
 
         public AuthController(INotificador notificador, 
                               IUserService userService,
-                              IEmailService emailsService) : base(notificador)
+                              IEmailService emailsService,
+                              IConfiguration configuration) : base(notificador)
         {
             _userService = userService;
             _emailService = emailsService;
+            _configuration = configuration;
         }
 
         [HttpPost("v1/login")]
@@ -37,7 +46,18 @@ namespace LibraryBook.Api.Controllers
             if (user == null || !BC.Verify(login.Password, user.Password))
             {
                 return BadRequest(new {message = "Email or password is incorrect" });
-            } 
+            }
+
+            var refreshToken = _userService.GenerateRefreshToken();
+
+            _ = int.TryParse(_configuration["JWT:RefreshTokenValidityInMinutes"],
+                out int refreshTokenValidityInMinutes);
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpireTime = DateTime.Now.AddMinutes(refreshTokenValidityInMinutes);
+
+            await _userService.Update(user);
+
 
             var loginResponse = await _userService.GenerateToken(user);
 
@@ -94,6 +114,72 @@ namespace LibraryBook.Api.Controllers
             await _userService.Update(user);
 
             return CustomResponse("Senha atualizada com sucesso.");
+        }
+
+        [HttpPost]
+        [Route("refresh-token")]
+        public async Task<IActionResult> RefreshToken(TokenDto tokenModel)
+        {
+            if (tokenModel is null)
+            {
+                return BadRequest("Invalid client request");
+            }
+
+            string? accessToken = tokenModel.AccessToken;
+            string? refreshToken = tokenModel.RefreshToken;
+
+            var principal = GetPrincipalFromExpiredToken(accessToken);
+            if (principal == null)
+            {
+                return BadRequest("Invalid access token/refresh token");
+            }
+
+            string username = principal.Identity.Name;
+            var user = await _userService.GetUserByEmail(username);
+
+            if (user == null || user.RefreshToken != refreshToken ||
+                       user.RefreshTokenExpireTime <= DateTime.Now)
+            {
+                return BadRequest("Invalid access token/refresh token");
+            }
+
+            var newAccessToken = await _userService.GenerateToken(user);
+            var newRefreshToken = _userService.GenerateRefreshToken();
+
+            user.RefreshToken = newRefreshToken;
+            await _userService.Update(user);
+
+            return new ObjectResult(new
+            {
+                accessToken = newAccessToken.AccessToken,
+                refreshToken = newRefreshToken
+            });
+        }
+
+        private ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token)
+        {
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                                   .GetBytes(_configuration["JWT:SecretKey"])),
+                ValidateLifetime = false
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters,
+                            out SecurityToken securityToken);
+
+            if (securityToken is not JwtSecurityToken jwtSecurityToken ||
+                      !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256,
+                                     StringComparison.InvariantCultureIgnoreCase))
+                throw new SecurityTokenException("Invalid token");
+
+            return principal;
         }
     }
 }

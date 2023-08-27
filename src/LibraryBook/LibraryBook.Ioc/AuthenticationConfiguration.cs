@@ -13,9 +13,9 @@ namespace LibraryBook.Api.Configuration
         {
             // JWT
 
-            var secretKey = configuration.GetSection("Settings:Secret");
-            var issuer = configuration.GetSection("Settings:Issuer");
-            var validOn = configuration.GetSection("Settings:ValidOn");
+            var secretKey = configuration.GetSection("JWT:Secret");
+            var issuer = configuration.GetSection("JWT:Issuer");
+            var validOn = configuration.GetSection("JWT:ValidOn");
 
             var key = Encoding.ASCII.GetBytes(secretKey.Value);
 

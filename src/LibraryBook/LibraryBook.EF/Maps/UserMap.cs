@@ -21,9 +21,12 @@ namespace LibraryBook.EF.Maps
             builder.Property(x => x.Email).HasColumnName("email").HasMaxLength(50).IsRequired();
             builder.Property(x => x.PhoneNumber).HasColumnName("phoneNumber").HasMaxLength(12).IsRequired();
             builder.Property(x => x.Password).HasColumnName("password").HasMaxLength(500).IsRequired();
+            builder.Property(x => x.RefreshToken).HasColumnName("refreshToken").HasMaxLength(500);
+            builder.Property(x => x.RefreshTokenExpireTime).HasColumnName("refreshTokenExpireTime");
             builder.Property(x => x.ProfilePic).HasColumnName("profilePic");
             builder.Property(x => x.Active).HasColumnName("active");
             builder.Property(x => x.Code).HasColumnName("code");
+
         }
     }
 }

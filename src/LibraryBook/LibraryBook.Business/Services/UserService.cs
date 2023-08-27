@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +23,7 @@ namespace LibraryBook.Business.Services
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
 
-        public UserService(INotificador notificador, 
+        public UserService(INotificador notificador,
                            IUserRepository userRepository,
                            IConfiguration configuration) : base(notificador)
         {
@@ -60,13 +62,13 @@ namespace LibraryBook.Business.Services
         {
             try
             {
-                var secretKey = _configuration.GetSection("Settings:Secret");
-                var Issuer = _configuration.GetSection("Settings:Issuer");
-                var validOn = _configuration.GetSection("Settings:ValidOn");
+                var secretKey = _configuration.GetSection("JWT:Secret");
+                var Issuer = _configuration.GetSection("JWT:Issuer");
+                var validOn = _configuration.GetSection("JWT:ValidOn");
 
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var key = Encoding.ASCII.GetBytes(secretKey.Value);
-                var token =  tokenHandler.CreateToken(new SecurityTokenDescriptor
+                var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
                 {
                     Issuer = Issuer.Value,
                     Audience = validOn.Value,
@@ -75,11 +77,14 @@ namespace LibraryBook.Business.Services
                         new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 });
 
-                var encodedToken =  tokenHandler.WriteToken(token);
+                var encodedToken = tokenHandler.WriteToken(token);
+
+                var refreshToken = GenerateRefreshToken();
 
                 var response = new LoginResponseDto
                 {
                     AccessToken = encodedToken,
+                    RefreshToken = refreshToken,
                     ExpiresIn = TimeSpan.FromHours(8).TotalSeconds,
                     UserToken = new UserTokenDto
                     {
@@ -88,7 +93,23 @@ namespace LibraryBook.Business.Services
                     }
                 };
 
-                return  response;
+                return response;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public string GenerateRefreshToken()
+        {
+            try
+            {
+                var randomNumber = new byte[32];
+                using var rng = RandomNumberGenerator.Create();
+                rng.GetBytes(randomNumber);
+                return Convert.ToBase64String(randomNumber);
 
             }
             catch (Exception)
@@ -108,3 +129,4 @@ namespace LibraryBook.Business.Services
         }
     }
 }
+
