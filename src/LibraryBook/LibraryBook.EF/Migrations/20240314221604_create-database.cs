@@ -5,8 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LibraryBook.EF.Migrations
 {
-    public partial class first_migration : Migration
+    /// <inheritdoc />
+    public partial class createdatabase : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -32,7 +34,11 @@ namespace LibraryBook.EF.Migrations
                     email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     phoneNumber = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
                     password = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    profilePic = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    profilePic = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    active = table.Column<bool>(type: "bit", nullable: false),
+                    code = table.Column<int>(type: "int", nullable: true),
+                    refreshToken = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    refreshTokenExpireTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -46,11 +52,11 @@ namespace LibraryBook.EF.Migrations
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    isbnNumber = table.Column<int>(type: "int", maxLength: 20, nullable: false),
+                    isbnNumber = table.Column<long>(type: "bigint", maxLength: 20, nullable: true),
                     auhor = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     editor = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     synopsis = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    pictureBook = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    pictureBook = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     id_gender = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     id_user = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
@@ -83,6 +89,7 @@ namespace LibraryBook.EF.Migrations
                 column: "id_user");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

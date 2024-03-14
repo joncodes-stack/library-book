@@ -6,6 +6,7 @@ using LibraryBook.Domain.Interface.Service;
 using LibraryBook.CrossCutting.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using BC = BCrypt.Net.BCrypt;
+using Microsoft.Win32;
 
 
 namespace LibraryBook.Api.Controllers
@@ -105,6 +106,22 @@ namespace LibraryBook.Api.Controllers
             await _userService.Update(user);
 
             return CustomResponse("Perfil atualizado com sucesso");
+        }
+
+        [HttpPost("change-password")]
+        public async Task<ActionResult> ChangePassword(Guid id, string password)
+        {
+            var user = await _userService.GetById(id);
+
+            if(user == null)
+            {
+                return CustomResponse("Id de usuário inexistente");
+            }
+
+            user.Password = BC.HashPassword(password);
+            await _userService.Update(user);
+
+            return CustomResponse("Troca de senha efetuada com sucesso");
         }
 
         [HttpPost("confirm-password")]

@@ -12,19 +12,20 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryBook.EF.Migrations
 {
     [DbContext(typeof(LibraryBookContext))]
-    [Migration("20221130044341_fix-column")]
-    partial class fixcolumn
+    [Migration("20240314221604_create-database")]
+    partial class createdatabase
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.11")
+                .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("LibraryBook.Business.Entities.Book", b =>
+            modelBuilder.Entity("LibraryBook.Domain.Entities.Book", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,15 +56,13 @@ namespace LibraryBook.EF.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("id_user");
 
-                    b.Property<int>("IsbnNumber")
+                    b.Property<long?>("IsbnNumber")
                         .HasMaxLength(20)
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasColumnName("isbnNumber");
 
                     b.Property<string>("PictureBook")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("pictureBook");
 
                     b.Property<string>("Synopsis")
@@ -87,7 +86,7 @@ namespace LibraryBook.EF.Migrations
                     b.ToTable("tb_book", (string)null);
                 });
 
-            modelBuilder.Entity("LibraryBook.Business.Entities.Gender", b =>
+            modelBuilder.Entity("LibraryBook.Domain.Entities.Gender", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,12 +111,20 @@ namespace LibraryBook.EF.Migrations
                     b.ToTable("tb_gender", (string)null);
                 });
 
-            modelBuilder.Entity("LibraryBook.Business.Entities.User", b =>
+            modelBuilder.Entity("LibraryBook.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("id");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit")
+                        .HasColumnName("active");
+
+                    b.Property<int?>("Code")
+                        .HasColumnType("int")
+                        .HasColumnName("code");
 
                     b.Property<DateTime>("Created_At")
                         .HasColumnType("datetime2")
@@ -149,24 +156,32 @@ namespace LibraryBook.EF.Migrations
 
                     b.Property<string>("ProfilePic")
                         .IsRequired()
-                        .HasMaxLength(4000)
-                        .HasColumnType("nvarchar(4000)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("profilePic");
+
+                    b.Property<string>("RefreshToken")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
+                        .HasColumnName("refreshToken");
+
+                    b.Property<DateTime>("RefreshTokenExpireTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("refreshTokenExpireTime");
 
                     b.HasKey("Id");
 
                     b.ToTable("tb_users", (string)null);
                 });
 
-            modelBuilder.Entity("LibraryBook.Business.Entities.Book", b =>
+            modelBuilder.Entity("LibraryBook.Domain.Entities.Book", b =>
                 {
-                    b.HasOne("LibraryBook.Business.Entities.Gender", "Gender")
+                    b.HasOne("LibraryBook.Domain.Entities.Gender", "Gender")
                         .WithMany()
                         .HasForeignKey("IdGender")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LibraryBook.Business.Entities.User", "User")
+                    b.HasOne("LibraryBook.Domain.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("IdUser")
                         .OnDelete(DeleteBehavior.Cascade)

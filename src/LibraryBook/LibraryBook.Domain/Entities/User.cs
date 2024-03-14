@@ -13,7 +13,7 @@ namespace LibraryBook.Domain.Entities
                 
         }
 
-        public User(string fullName, string email, string phoneNumber, string password, string profilePic, bool active, int? code, string refreshToken, DateTime refreshTokenExpireTime)
+        public User(string fullName, string email, string phoneNumber, string password, string profilePic, bool active, int? code, string? refreshToken, DateTime refreshTokenExpireTime)
         {
             FullName = fullName;
             Email = email;
@@ -33,7 +33,7 @@ namespace LibraryBook.Domain.Entities
         public string ProfilePic { get; set; }
         public bool Active { get; set; }
         public int? Code { get; set; }
-        public string RefreshToken { get; set; }
+        public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpireTime { get; set; }
     }
 }
