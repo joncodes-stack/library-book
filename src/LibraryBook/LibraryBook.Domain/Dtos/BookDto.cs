@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryBook.Domain.Dtos.BooksDto
+namespace LibraryBook.Domain.Dtos
 {
     public class BookDto
     {
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Title { get; set; }

@@ -8,6 +8,23 @@ namespace LibraryBook.Domain.Entities
 {
     public class Book : BaseEntity
     {
+        public Book()
+        {
+                
+        }
+
+        public Book(string title, long? isbnNumber, string author, string editor, string synopsis, string pictureBook, Guid idGender,  Guid idUser)
+        {
+            Title = title;
+            IsbnNumber = isbnNumber;
+            Author = author;
+            Editor = editor;
+            Synopsis = synopsis;
+            PictureBook = pictureBook;
+            IdGender = idGender;
+            IdUser = idUser;
+        }
+
         public string Title { get; set; }
         public long? IsbnNumber { get; set; }
         public string Author { get; set; }

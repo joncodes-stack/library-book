@@ -9,7 +9,7 @@ using LibraryBook.Domain.Entities;
 using LibraryBook.CrossCutting.Services;
 using LibraryBook.Domain.Services;
 using Microsoft.Win32;
-using LibraryBook.Domain.Dtos.BooksDto;
+using LibraryBook.Domain.Dtos;
 
 namespace LibraryBook.Api.Controllers
 {
@@ -47,11 +47,11 @@ namespace LibraryBook.Api.Controllers
         }
 
         [HttpPut("update-book")]
-        public async Task<ActionResult> UpdateBook(UpdateBookDto bookDto)
+        public async Task<IActionResult> UpdateBook(BookDto bookDto)
         {
-            if (bookDto.Id == null)
+            if (string.IsNullOrEmpty(bookDto.Id.ToString()))
             {
-                return BadRequest("Id do livro e obrigatório");
+                return BadRequest("Id do livro é obrigatório");
             }
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
@@ -71,7 +71,7 @@ namespace LibraryBook.Api.Controllers
         }
 
         [HttpDelete("remove-book")]
-        public async Task<ActionResult> RemoveBook(Guid id)
+        public async Task<IActionResult> RemoveBook(Guid id)
         {
             if (id == null)
             {
