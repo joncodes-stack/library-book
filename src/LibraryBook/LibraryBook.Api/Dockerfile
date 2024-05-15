@@ -24,6 +24,18 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./LibraryBook.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
+
+# Enable the agent
+ENV CORECLR_ENABLE_PROFILING=1 \
+CORECLR_PROFILER={36032161-FFC0-4B61-B559-F6C5D41BAE5A} \
+CORECLR_NEWRELIC_HOME=/usr/local/newrelic-dotnet-agent \
+CORECLR_PROFILER_PATH=/usr/local/newrelic-dotnet-agent/libNewRelicProfiler.so \
+NEW_RELIC_LICENSE_KEY=2041a9c6e085b1ab415e617bba4cf7d2FFFFNRAL \
+NEW_RELIC_APP_NAME="LibraryBook.Api"
+
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "LibraryBook.Api.dll"]
+
+
+
