@@ -23,8 +23,6 @@ FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./LibraryBook.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-FROM base AS final
-
 # Install the agent
 RUN apt-get update && apt-get install -y wget ca-certificates gnupg \
 && echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' | tee /etc/apt/sources.list.d/newrelic.list \
@@ -42,7 +40,7 @@ CORECLR_PROFILER_PATH=/usr/local/newrelic-dotnet-agent/libNewRelicProfiler.so \
 NEW_RELIC_LICENSE_KEY=2041a9c6e085b1ab415e617bba4cf7d2FFFFNRAL \
 NEW_RELIC_APP_NAME="LibraryBook.Api"
 
-
+FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "LibraryBook.Api.dll"]
